@@ -85,7 +85,27 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+
+  {
+    title: 'Chinese investors told to "stay rational"',
+    date: 'Oct 30, 2019',
+    firstParagraph: `Hong Kong (Lambda Business)The Chinese government is trying to dampen demand for local tech stocks after President Xi Jinping personally endorsed blockchain technology, sending their value soaring.`,
+
+    secondParagraph: `Stocks of almost 200 companies that invest in blockchain technology jumped around 8% on Monday, according to an index compiled by East Money Information, with some very quickly hitting their daily limit of a 10% increase.`,
+
+    thirdParagraph: `The spike came three days after Xi called for faster development of the blockchain sector, according to Chinese state-run news agency Xinhua.`
+  },
+  {
+    title: 'Baby Blog',
+    date: 'Oct 30, 2019',
+    firstParagraph: `Gooo goo gaa gaa blaa Gooo goo gaa gaa blaa Gooo goo gaa gaa blaa Gooo goo gaa gaa blaa `,
+
+    secondParagraph: `Blannn blahh blahhh Blannn blahh blahhh Blannn blahh blahhh Blannn blahh blahhh`,
+
+    thirdParagraph: `Mamma Dadda Mamma Dadda Mamma Dadda Mamma Dadda Mamma Dadda Mamma Dadda Mamma Dadda`
   }
+  
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
@@ -112,3 +132,97 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+// ComponentCreator Button
+// function componentCreator(obj){
+//   // Create Elements
+//   const div = document.createElement('div');
+//   const title = document.createElement('h2');
+//   const date = document.createElement('p');
+//   const firstPar = document.createElement('p');
+//   const secondPar = document.createElement('p');
+//   const thirdPar = document.createElement('p');
+//   const expand = document.createElement('span');
+
+//   // Add Classes
+//   div.classList.add('article');
+//   date.classList.add('date');
+//   expand.classList.add('expandButton');
+
+//   // Event Listner for expand
+//   expand.addEventListener('click', (e) => {
+//       div.classList.toggle("article-open");
+//   });
+
+//   //Attatch Elements
+//   div.appendChild(title);
+//   div.appendChild(date);
+//   div.appendChild(firstPar);
+//   div.appendChild(secondPar);
+//   div.appendChild(thirdPar);
+//   div.appendChild(expand);
+
+//   //Add Content
+//   title.textContent = obj.title;
+//   date.textContent = obj.date;
+//   firstPar.textContent = obj.firstParagraph;
+//   secondPar.textContent = obj.secondParagraph;
+//   thirdPar.textContent = obj.thirdParagraph;
+
+//   //Returns the Div 
+//   return div;
+// };
+
+
+// //Acess article class
+// let articles = document.querySelector(".articles");
+
+
+// //Iterate over object to produce content
+// data.forEach((arrayItem) => {
+//   let newDiv = componentCreator(arrayItem);
+
+//   articles.appendChild(newDiv);
+// });
+
+// ComponentCreator Button
+function componentCreator(obj) {
+  // Create Elements
+  const divContainer = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document.createElement('p');
+  const firstPar = document.createElement('p');
+  const secondPar = document.createElement('p');
+  const thirdPar = document.createElement('p');
+  const expand = document.createElement('span');
+  // Add Classes
+  divContainer.classList.add('article');
+  date.classList.add('date');
+  expand.classList.add('expandButton');
+  // Event Listner for expand
+  expand.addEventListener('click', () => {
+    divContainer.classList.toggle('article-open');
+  });
+  //Attatch Elements
+  divContainer.appendChild(title);
+  divContainer.appendChild(date);
+  divContainer.appendChild(firstPar);
+  divContainer.appendChild(secondPar);
+  divContainer.appendChild(thirdPar);
+  divContainer.appendChild(expand);
+  //Add Content
+  title.textContent = obj.title;
+  date.textContent = obj.date;
+  firstPar.textContent = obj.firstParagraph;
+  secondPar.textContent = obj.secondParagraph;
+  thirdPar.textContent = obj.thirdParagraph;
+  //Returns the DivContainer
+  return divContainer;
+}
+//Acess article class
+let articles = document.querySelector('.articles');
+//Iterate over object to produce content
+data.forEach(arrayItem => {
+  let newDiv = componentCreator(arrayItem);
+  articles.appendChild(newDiv);
+});
