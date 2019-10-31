@@ -71,9 +71,9 @@
   color: grey;
   cursor: pointer;
   transform: translate(-50%);
-  background-color: green;
-  height: 10px;
-  width: 10px;
+  /* background-color: green; */
+  height: 20px;
+  width: 20px;
 }
 .article-open {
   height: 400px;

@@ -185,8 +185,10 @@ const data = [
 //   articles.appendChild(newDiv);
 // });
 
+const arrow = '../assets/arrow.png';
+
 // ComponentCreator Button
-function componentCreator(obj) {
+function componentCreator(obj, arrow) {
   // Create Elements
   const divContainer = document.createElement('div');
   const title = document.createElement('h2');
@@ -195,6 +197,7 @@ function componentCreator(obj) {
   const secondPar = document.createElement('p');
   const thirdPar = document.createElement('p');
   const expand = document.createElement('span');
+  const img = document.createElement("img");
   // Add Classes
   divContainer.classList.add('article');
   date.classList.add('date');
@@ -210,12 +213,14 @@ function componentCreator(obj) {
   divContainer.appendChild(secondPar);
   divContainer.appendChild(thirdPar);
   divContainer.appendChild(expand);
+  expand.appendChild(img);
   //Add Content
   title.textContent = obj.title;
   date.textContent = obj.date;
   firstPar.textContent = obj.firstParagraph;
   secondPar.textContent = obj.secondParagraph;
   thirdPar.textContent = obj.thirdParagraph;
+  img.src = arrow;
   //Returns the DivContainer
   return divContainer;
 }
