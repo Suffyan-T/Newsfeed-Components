@@ -185,10 +185,10 @@ const data = [
 //   articles.appendChild(newDiv);
 // });
 
-const arrow = '../assets/arrow.png';
+
 
 // ComponentCreator Button
-function componentCreator(obj, arrow) {
+function componentCreator(obj) {
   // Create Elements
   const divContainer = document.createElement('div');
   const title = document.createElement('h2');
@@ -220,7 +220,7 @@ function componentCreator(obj, arrow) {
   firstPar.textContent = obj.firstParagraph;
   secondPar.textContent = obj.secondParagraph;
   thirdPar.textContent = obj.thirdParagraph;
-  img.src = arrow;
+  img.src =  './assets/arrow.png';
   //Returns the DivContainer
   return divContainer;
 }
